@@ -55,6 +55,10 @@ type serviceListStruct struct {
 
 func FirestoreFunction(ctx context.Context, e FirestoreEvent) error {
 	telegramBotToken := os.Getenv("TELEGRAM_TOKEN")
+	if telegramBotToken == "" {
+		log.Fatalln("Env variable TELEGRAM_TOKEN not found")
+	}
+
 	bot, err := tgbotapi.NewBotAPI(telegramBotToken)
 	if err != nil {
 		log.Panic(err)

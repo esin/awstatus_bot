@@ -64,6 +64,10 @@ func checkIsUserStarted(userID int64) bool {
 func TelegramDash(w http.ResponseWriter, r *http.Request) {
 
 	telegramBotToken := os.Getenv("TELEGRAM_TOKEN")
+	if telegramBotToken == "" {
+		log.Fatalln("Env variable TELEGRAM_TOKEN not found")
+	}
+
 	bot, err := tgbotapi.NewBotAPI(telegramBotToken)
 	if err != nil {
 		log.Panic(err)
