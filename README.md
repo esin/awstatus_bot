@@ -1,5 +1,6 @@
-# awstatus_bot
-AWS Status monitoring bot
+# ☁️ AWStatus Telegram bot
+
+For now, bot are living at [t.me/awstatus_bot](t.me/awstatus_bot)
 
 AWS have a great status monitoring page - https://status.aws.amazon.com but it huge and can't notify about services issues, so appeared idea to write notification bot
 
